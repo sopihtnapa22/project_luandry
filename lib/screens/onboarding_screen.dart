@@ -27,12 +27,43 @@ class OnboardingScreen extends StatelessWidget {
             child: Image.asset('assets/wave_light.png', width: double.infinity, height: 390, fit: BoxFit.fill),
           ),
 
-          // เนื้อหาหน้า Onboarding
           Positioned.fill(
             child: Column(
               children: [
                 SizedBox(height: 120),
-                Text("Hello Onboarding", style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
+                Text(
+                  "huangluandry",
+                  style: TextStyle(fontFamily: "Lemonada", fontSize: 28, fontWeight: FontWeight.bold, color: Color(0xFF4FC3F7)),
+                ),
+                Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [SizedBox(height: 80), Image.asset('assets/laundry.png', width: 250, height: 250)],
+                  ),
+                ),
+                SizedBox(height: 170),
+                Center(
+                  child: Text(
+                    'Fresh laundry, delivered to your door. Fast pickup, professional cleaning, and easy tracking — all in one app.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Colors.black, fontFamily: 'Roboto'),
+                  ),
+                ),
+                SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    print('Get Started Button Pressed!');
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: Color(0xFF4FC3F7),
+
+                    minimumSize: const Size(200, 60),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+                    elevation: 5,
+                  ),
+                  child: const Text('Get Started', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                ),
               ],
             ),
           ),
