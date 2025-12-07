@@ -10,6 +10,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: const OnboardingScreen());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: OnboardingScreen());
   }
 }
