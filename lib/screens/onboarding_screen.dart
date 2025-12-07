@@ -13,7 +13,7 @@ class OnboardingScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // รูป Onboarding
-            Image.asset("assets/onboarding.png", height: 260),
+            Image.asset("assets/onboarding.png", height: 300),
 
             const SizedBox(height: 40),
 
