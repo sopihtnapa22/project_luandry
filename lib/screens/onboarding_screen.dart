@@ -62,7 +62,10 @@ class OnboardingScreen extends StatelessWidget {
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
                     elevation: 5,
                   ),
-                  child: const Text('Get Started', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                  child: const Text(
+                    'Get Started',
+                    style: TextStyle(fontSize: 30, fontFamily: 'LeagueSpartan', fontWeight: FontWeight.bold),
+                  ),
                 ),
               ],
             ),

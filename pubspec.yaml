@@ -31,3 +31,10 @@ flutter:
         - asset: assets/fonts/Lemonada-Regular.ttf
         - asset: assets/fonts/Lemonada-Bold.ttf
           weight: 700
+    - family: "LeagueSpartan"
+      fonts:
+        - asset: assets/fonts/LeagueSpartan-Bold.ttf
+        - asset: assets/fonts/LeagueSpartan-ExtraBold.ttf
+        - asset: assets/fonts/LeagueSpartan-Medium.ttf
+        - asset: assets/fonts/LeagueSpartan-Regular.ttf
+        
