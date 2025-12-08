@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_luandry/screens/login/login_screen.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -52,7 +53,7 @@ class OnboardingScreen extends StatelessWidget {
                 SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
-                    print('Get Started Button Pressed!');
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginScreen()));
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
