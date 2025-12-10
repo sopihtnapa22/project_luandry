@@ -64,39 +64,46 @@ class LoginScreen extends StatelessWidget {
                         obscureText: true,
                         decoration: InputDecoration(
                           labelText: "password...",
+                          labelStyle: TextStyle(color: Color(0xFFBDBDBD), fontSize: 25, fontFamily: 'Fredoka', fontWeight: FontWeight.w500),
+                          contentPadding: EdgeInsets.symmetric(vertical: 1, horizontal: 8),
 
-                          border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                          enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xFFBDBDBD), width: 2)),
+                          focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xFFBDBDBD), width: 2)),
                         ),
                       ),
-
+                      const SizedBox(height: 8),
                       Align(
                         alignment: Alignment.centerRight,
                         child: TextButton(
-                          onPressed: () {
-                            /* Forgot Password Logic */
-                          },
-                          child: const Text('forgot password?', style: TextStyle(color: Color(0xFFBDBDBD))),
+                          onPressed: () {},
+                          child: const Text('forgot password?', style: TextStyle(color: Color(0xFFBDBDBD), fontSize: 20)),
                         ),
                       ),
 
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 60),
 
-                      // ปุ่ม Login
-                      ElevatedButton(
-                        onPressed: () {
-                          debugPrint('Phone: ${phoneController.text}');
-                          debugPrint('Password: ${passwordController.text}');
-                        },
-                        style: ElevatedButton.styleFrom(
-                          minimumSize: const Size(200, 60),
-                          backgroundColor: primaryBlue,
-                          foregroundColor: Colors.white,
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-                          elevation: 5,
-                        ),
-                        child: const Text(
-                          "login",
-                          style: TextStyle(fontSize: 30, fontFamily: 'Fredoka', fontWeight: FontWeight.bold),
+                      Align(
+                        alignment: Alignment.center,
+                        child: SizedBox(
+                          width: 200, // <<< กำหนดความกว้างเอง
+                          child: ElevatedButton(
+                            onPressed: () {
+                              debugPrint('Phone: ${phoneController.text}');
+                              debugPrint('Password: ${passwordController.text}');
+                            },
+                            style: ElevatedButton.styleFrom(
+                              minimumSize: const Size(200, 70),
+                              backgroundColor: primaryBlue,
+                              foregroundColor: Colors.white,
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+                              side: BorderSide(color: Colors.blueAccent, width: 2),
+                              elevation: 5,
+                            ),
+                            child: const Text(
+                              "login",
+                              style: TextStyle(fontSize: 30, fontFamily: 'Fredoka', fontWeight: FontWeight.bold),
+                            ),
+                          ),
                         ),
                       ),
                     ],
