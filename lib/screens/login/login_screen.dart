@@ -5,7 +5,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController emailController = TextEditingController();
+    final TextEditingController phoneController = TextEditingController();
     final TextEditingController passwordController = TextEditingController();
 
     // กำหนดสีหลักของธีม
@@ -42,20 +42,22 @@ class LoginScreen extends StatelessWidget {
                         'Login',
                         style: TextStyle(fontSize: 40, fontWeight: FontWeight.w900, color: Colors.black),
                       ),
-                      const SizedBox(height: 30),
+                      const SizedBox(height: 40),
 
-                      // ช่องกรอก Email
                       TextField(
-                        controller: emailController,
-                        keyboardType: TextInputType.emailAddress,
+                        controller: phoneController,
+                        keyboardType: TextInputType.phone,
                         decoration: InputDecoration(
                           labelText: "phone...",
+                          labelStyle: TextStyle(color: Color(0xFFBDBDBD), fontSize: 25, fontFamily: 'Fredoka', fontWeight: FontWeight.w500),
+                          contentPadding: EdgeInsets.symmetric(vertical: 1, horizontal: 8),
 
-                          border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                          enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xFFBDBDBD), width: 2)),
+                          focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xFFBDBDBD), width: 2)),
                         ),
                       ),
 
-                      const SizedBox(height: 18),
+                      const SizedBox(height: 60),
 
                       TextField(
                         controller: passwordController,
@@ -82,7 +84,7 @@ class LoginScreen extends StatelessWidget {
                       // ปุ่ม Login
                       ElevatedButton(
                         onPressed: () {
-                          debugPrint('Email: ${emailController.text}');
+                          debugPrint('Phone: ${phoneController.text}');
                           debugPrint('Password: ${passwordController.text}');
                         },
                         style: ElevatedButton.styleFrom(
@@ -94,7 +96,7 @@ class LoginScreen extends StatelessWidget {
                         ),
                         child: const Text(
                           "login",
-                          style: TextStyle(fontSize: 30, fontFamily: 'Lemonada', fontWeight: FontWeight.bold),
+                          style: TextStyle(fontSize: 30, fontFamily: 'Fredoka', fontWeight: FontWeight.bold),
                         ),
                       ),
                     ],

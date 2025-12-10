@@ -37,4 +37,10 @@ flutter:
         - asset: assets/fonts/LeagueSpartan-ExtraBold.ttf
         - asset: assets/fonts/LeagueSpartan-Medium.ttf
         - asset: assets/fonts/LeagueSpartan-Regular.ttf
+    - family: "Fredoka"
+      fonts:
+      - asset: assets/fonts/Fredoka_Condensed-Bold.ttf
+      - asset: assets/fonts/Fredoka_Condensed-Medium.tff
+      - asset: assets/fonts/Fredoka_Condensed-Regular.tff
+      - asset: assets/fonts/Fredoka_Expanded-Bold.ttf
         
