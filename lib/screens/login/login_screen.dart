@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_luandry/screens/password/reset_password.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -8,7 +9,6 @@ class LoginScreen extends StatelessWidget {
     final TextEditingController phoneController = TextEditingController();
     final TextEditingController passwordController = TextEditingController();
 
-    // กำหนดสีหลักของธีม
     const Color primaryBlue = Color(0xFF4FC3F7);
 
     final double loginCardHeight = MediaQuery.of(context).size.height * 0.7;
@@ -18,6 +18,7 @@ class LoginScreen extends StatelessWidget {
       // ใช้ Stack เพื่อวางองค์ประกอบทับซ้อนกัน
       body: Stack(
         children: [
+          Positioned(top: 140, right: 30, child: Image.asset('assets/basket.png', width: 120, height: 120)),
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
@@ -75,7 +76,9 @@ class LoginScreen extends StatelessWidget {
                       Align(
                         alignment: Alignment.centerRight,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const ResetPasswordScreen()));
+                          },
                           child: const Text('forgot password?', style: TextStyle(color: Color(0xFFBDBDBD), fontSize: 20)),
                         ),
                       ),
@@ -85,7 +88,7 @@ class LoginScreen extends StatelessWidget {
                       Align(
                         alignment: Alignment.center,
                         child: SizedBox(
-                          width: 200, // <<< กำหนดความกว้างเอง
+                          width: 200,
                           child: ElevatedButton(
                             onPressed: () {
                               debugPrint('Phone: ${phoneController.text}');
