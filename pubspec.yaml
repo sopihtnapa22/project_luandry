@@ -27,6 +27,7 @@ flutter:
     - assets/wave_light.png
     - assets/laundry.png
     - assets/basket.png
+    - assets/reset_password.png
 
   fonts:
     - family: "Lemonada"
