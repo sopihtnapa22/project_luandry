@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_luandry/screens/password/reset_password.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:project_luandry/screens/singup/singup_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -36,7 +38,7 @@ class LoginScreen extends StatelessWidget {
                   // SingleChildScrollView เพื่อป้องกัน overflow เมื่อแป้นพิมพ์ขึ้น
                   padding: const EdgeInsets.all(30.0),
                   child: Column(
-                    mainAxisSize: MainAxisSize.min, // ทำให้ Column ใช้ความสูงเท่าที่จำเป็น
+                    mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       const Text(
@@ -50,7 +52,7 @@ class LoginScreen extends StatelessWidget {
                         keyboardType: TextInputType.phone,
                         decoration: InputDecoration(
                           labelText: "phone...",
-                          labelStyle: TextStyle(color: Color(0xFFBDBDBD), fontSize: 25, fontFamily: 'Fredoka', fontWeight: FontWeight.w500),
+                          labelStyle: GoogleFonts.fredoka(color: Color(0xFFBDBDBD), fontSize: 25, fontWeight: FontWeight.w500),
                           contentPadding: EdgeInsets.symmetric(vertical: 1, horizontal: 8),
 
                           enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xFFBDBDBD), width: 2)),
@@ -65,7 +67,7 @@ class LoginScreen extends StatelessWidget {
                         obscureText: true,
                         decoration: InputDecoration(
                           labelText: "password...",
-                          labelStyle: TextStyle(color: Color(0xFFBDBDBD), fontSize: 25, fontFamily: 'Fredoka', fontWeight: FontWeight.w500),
+                          labelStyle: GoogleFonts.fredoka(color: Color(0xFFBDBDBD), fontSize: 25, fontWeight: FontWeight.w500),
                           contentPadding: EdgeInsets.symmetric(vertical: 1, horizontal: 8),
 
                           enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xFFBDBDBD), width: 2)),
@@ -79,7 +81,10 @@ class LoginScreen extends StatelessWidget {
                           onPressed: () {
                             Navigator.push(context, MaterialPageRoute(builder: (context) => const ResetPasswordScreen()));
                           },
-                          child: const Text('forgot password?', style: TextStyle(color: Color(0xFFBDBDBD), fontSize: 20)),
+                          child: Text(
+                            'forgot password?',
+                            style: GoogleFonts.fredoka(color: Color(0xFFBDBDBD), fontSize: 20, fontWeight: FontWeight.w500),
+                          ),
                         ),
                       ),
 
@@ -102,12 +107,28 @@ class LoginScreen extends StatelessWidget {
                               side: BorderSide(color: Colors.blueAccent, width: 2),
                               elevation: 5,
                             ),
-                            child: const Text(
-                              "login",
-                              style: TextStyle(fontSize: 30, fontFamily: 'Fredoka', fontWeight: FontWeight.bold),
-                            ),
+                            child: Text("login", style: GoogleFonts.fredoka(fontSize: 30, fontWeight: FontWeight.bold)),
                           ),
                         ),
+                      ),
+                      const SizedBox(height: 40),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Don't have account? ",
+                            style: GoogleFonts.fredoka(fontSize: 20, color: Color(0xFFBDBDBD), fontWeight: FontWeight.w500),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const SignUpScreen()));
+                            },
+                            child: Text(
+                              "Sign up",
+                              style: GoogleFonts.fredoka(fontSize: 20, color: Color(0xFF4FC3F7), fontWeight: FontWeight.w600),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),

@@ -11,6 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
+  path_provider: ^2.1.5
+  google_fonts: ^6.3.3
 
 dev_dependencies:
   flutter_test:
@@ -38,10 +40,5 @@ flutter:
         - asset: assets/fonts/LeagueSpartan-ExtraBold.ttf
         - asset: assets/fonts/LeagueSpartan-Medium.ttf
         - asset: assets/fonts/LeagueSpartan-Regular.ttf
-    # - family: "Fredoka"
-    #   fonts:
-    #   - asset: assets/fonts/Fredoka_Condensed-Bold.ttf
-    #   - asset: assets/fonts/Fredoka_Condensed-Medium.tff
-    #   - asset: assets/fonts/Fredoka_Condensed-Regular.tff
-    #   - asset: assets/fonts/Fredoka_Expanded-Bold.ttf
+   
         
