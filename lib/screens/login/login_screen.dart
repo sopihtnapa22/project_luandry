@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_luandry/screens/%E0%B9%89home/home.dart';
 import 'package:project_luandry/screens/password/reset_password.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:project_luandry/screens/singup/singup_screen.dart';
@@ -96,8 +97,7 @@ class LoginScreen extends StatelessWidget {
                           width: 200,
                           child: ElevatedButton(
                             onPressed: () {
-                              debugPrint('Phone: ${phoneController.text}');
-                              debugPrint('Password: ${passwordController.text}');
+                              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
                             },
                             style: ElevatedButton.styleFrom(
                               minimumSize: const Size(200, 70),

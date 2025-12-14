@@ -29,6 +29,8 @@ flutter:
     - assets/basket.png
     - assets/reset_password.png
     - assets/enter_password.png
+    - assets/quick-dry.png
+    - assets/wash.png
 
   fonts:
     - family: "Lemonada"
