@@ -6,7 +6,7 @@ class ResetPasswordScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double cardHeight = MediaQuery.of(context).size.height * 0.5;
+    final double cardHeight = MediaQuery.of(context).size.height * 0.45;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -34,38 +34,54 @@ class ResetPasswordScreen extends StatelessWidget {
 
               decoration: BoxDecoration(
                 color: const Color(0xFF4FC3F7),
-                border: Border.all(color: Colors.grey.shade300, width: 4),
+                border: Border(top: BorderSide(color: Colors.grey.shade300, width: 4)),
                 borderRadius: const BorderRadius.only(topLeft: Radius.circular(50), topRight: Radius.circular(50)),
               ),
 
               child: Column(
                 mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+
                 children: [
-                  Text("Reset Password", style: GoogleFonts.fredoka(fontSize: 26, fontWeight: FontWeight.bold)),
-                  const SizedBox(height: 20),
-
-                  Text("Email", style: GoogleFonts.fredoka(fontSize: 18)),
-                  const SizedBox(height: 8),
-
-                  TextField(
-                    decoration: InputDecoration(
-                      hintText: "Enter your email",
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
-                    ),
+                  const SizedBox(height: 10),
+                  Text(
+                    "Reset password",
+                    style: GoogleFonts.fredoka(fontSize: 28, fontWeight: FontWeight.w600, color: Colors.white),
                   ),
-
-                  const SizedBox(height: 25),
+                  const SizedBox(height: 50),
 
                   SizedBox(
-                    width: double.infinity,
+                    width: 360,
+                    height: 40,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: "phone...",
+                        hintStyle: GoogleFonts.fredoka(fontSize: 24, color: Color(0xFFBDBDBD), fontWeight: FontWeight.w500),
+                        filled: true,
+                        fillColor: Colors.white,
+
+                        enabledBorder: OutlineInputBorder(borderSide: const BorderSide(color: Color(0xFFBDBDBD), width: 1)),
+
+                        focusedBorder: OutlineInputBorder(borderSide: const BorderSide(color: Color(0xFFBDBDBD), width: 1)),
+                        contentPadding: const EdgeInsets.symmetric(vertical: 14, horizontal: 12),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 100),
+
+                  SizedBox(
+                    height: 50,
+                    width: 200,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(vertical: 14),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                        backgroundColor: Color(0xFF039BE5),
+                        side: const BorderSide(color: Colors.white, width: 2),
                       ),
                       onPressed: () {},
-                      child: Text("Send Reset Link", style: GoogleFonts.fredoka(fontSize: 20)),
+                      child: Text(
+                        "send",
+                        style: GoogleFonts.fredoka(fontSize: 22, color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ),
                 ],
