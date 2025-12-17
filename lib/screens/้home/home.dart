@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:project_luandry/screens/%E0%B9%89home/history.dart';
-import 'package:project_luandry/screens/%E0%B9%89home/order.dart';
+import 'package:project_luandry/screens/%E0%B9%89home/Order.dart';
 import 'package:project_luandry/screens/%E0%B9%89home/profile.dart';
 import 'package:project_luandry/widgets/card.dart';
 

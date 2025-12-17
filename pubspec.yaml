@@ -31,6 +31,8 @@ flutter:
     - assets/enter_password.png
     - assets/quick-dry.png
     - assets/wash.png
+    - assets/dry.png
+    - assets/laundry(1).png
     
 
   fonts:

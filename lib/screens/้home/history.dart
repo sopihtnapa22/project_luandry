@@ -1,75 +1,79 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:project_luandry/widgets/history_card.dart';
 
 class HistoryScreen extends StatelessWidget {
   const HistoryScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFE0F7FA),
-      appBar: AppBar(
-        backgroundColor: const Color(0xFF4FC3F7),
-        elevation: 0,
-        centerTitle: true,
-        title: Text(
-          "History",
-          style: GoogleFonts.fredoka(fontSize: 26, fontWeight: FontWeight.bold, color: Colors.white),
-        ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          children: const [
-            HistoryCard(title: "Wash Clothes", date: "12 Sep 2025", status: "Completed"),
-            SizedBox(height: 16),
-            HistoryCard(title: "Dry Clothes", date: "10 Sep 2025", status: "Completed"),
-            SizedBox(height: 16),
-            HistoryCard(title: "Wash + Dry", date: "8 Sep 2025", status: "Completed"),
-          ],
-        ),
-      ),
-    );
-  }
-}
+      backgroundColor: Colors.white,
 
-class HistoryCard extends StatelessWidget {
-  final String title;
-  final String date;
-  final String status;
-
-  const HistoryCard({super.key, required this.title, required this.date, required this.status});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.1), blurRadius: 8, offset: const Offset(0, 4))],
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
             children: [
-              Text(title, style: GoogleFonts.fredoka(fontSize: 20, fontWeight: FontWeight.bold)),
-              const SizedBox(height: 6),
-              Text(date, style: GoogleFonts.fredoka(fontSize: 14, color: Colors.grey)),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  margin: const EdgeInsets.only(left: 4),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.15), blurRadius: 8, spreadRadius: 1, offset: const Offset(0, 4))],
+                  ),
+
+                  child: IconButton(
+                    padding: EdgeInsets.zero,
+                    icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black, size: 20),
+                    onPressed: () => Navigator.pop(context),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
+
+              Expanded(
+                child: ListView(
+                  padding: const EdgeInsets.only(top: 12),
+                  children: const [
+                    HistoryCard(
+                      date: "12 Feb 2025",
+                      machineNo: "03",
+                      washType: "Wash (Warm Water)",
+                      timeRange: "13:20 -> 13:50",
+                      duration: "30 min",
+                      total: "฿30",
+                      iconBgColor: Color(0xFFFFF9C4),
+                      imagePath: "assets/laundry(1).png",
+                    ),
+                    SizedBox(height: 25),
+                    HistoryCard(
+                      date: "12 Feb 2025",
+                      machineNo: "03",
+                      washType: "Wash (Cold Water)",
+                      timeRange: "13:20 -> 13:50",
+                      duration: "30 min",
+                      total: "฿25",
+                      iconBgColor: Color(0xFFE8EAF6),
+                      imagePath: "assets/laundry(1).png",
+                    ),
+                    SizedBox(height: 25),
+                    HistoryCard(
+                      date: "11 Feb 2025",
+                      machineNo: "03",
+                      washType: "Wash (Warm Water)",
+                      timeRange: "13:20 -> 13:50",
+                      duration: "30 min",
+                      total: "฿40",
+                      iconBgColor: Color(0xFFE8EAF6),
+                      imagePath: "assets/dry.png",
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
-            decoration: BoxDecoration(color: Colors.greenAccent.shade100, borderRadius: BorderRadius.circular(20)),
-            child: Text(
-              status,
-              style: GoogleFonts.fredoka(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.green),
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }

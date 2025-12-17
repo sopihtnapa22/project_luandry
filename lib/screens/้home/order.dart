@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
+import 'package:project_luandry/widgets/order_card.dart';
 
 class OrderScreen extends StatelessWidget {
   const OrderScreen({super.key});
@@ -16,62 +17,62 @@ class OrderScreen extends StatelessWidget {
             children: [
               Align(
                 alignment: Alignment.centerLeft,
-                child: IconButton(
-                  icon: const Icon(Icons.arrow_back),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
+                child: Container(
+                  margin: const EdgeInsets.only(left: 4),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.15), blurRadius: 8, spreadRadius: 1, offset: const Offset(0, 4))],
+                  ),
+
+                  child: IconButton(
+                    padding: EdgeInsets.zero,
+                    icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black, size: 20),
+                    onPressed: () => Navigator.pop(context),
+                  ),
                 ),
               ),
+              const SizedBox(height: 20),
 
-              const SizedBox(height: 24),
-
-              /// ===== Order Cards =====
-              const OrderCard(title: "Wash Clothes", status: "In Progress", statusColor: Colors.orange),
-
-              const SizedBox(height: 16),
-
-              const OrderCard(title: "Dry Clothes", status: "Waiting", statusColor: Colors.blue),
+              Expanded(
+                child: ListView(
+                  padding: const EdgeInsets.only(top: 12),
+                  children: const [
+                    OrderCard(
+                      machineNo: "04",
+                      washType: "Warm Water",
+                      timeLeft: "18 min",
+                      startTime: "14:12",
+                      finishTime: "14:42",
+                      iconBgColor: Color(0xFFFFF9C4),
+                      imagesParth: "assets/laundry(1).png",
+                    ),
+                    SizedBox(height: 25),
+                    OrderCard(
+                      machineNo: "06",
+                      washType: "Cold Water",
+                      timeLeft: "18 min",
+                      startTime: "14:12",
+                      finishTime: "14:42",
+                      iconBgColor: Color(0xFFE8EAF6),
+                      imagesParth: "assets/laundry(1).png",
+                    ),
+                    SizedBox(height: 25),
+                    OrderCard(
+                      machineNo: "05",
+                      washType: "Dry",
+                      timeLeft: "18 min",
+                      startTime: "14:12",
+                      finishTime: "14:42",
+                      iconBgColor: Color(0xFFE8EAF6),
+                      imagesParth: "assets/dry.png",
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-/// ===== Order Card =====
-class OrderCard extends StatelessWidget {
-  final String title;
-  final String status;
-  final Color statusColor;
-
-  const OrderCard({super.key, required this.title, required this.status, required this.statusColor});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: const [BoxShadow(color: Color.fromARGB(40, 0, 0, 0), blurRadius: 10, offset: Offset(0, 4))],
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(title, style: GoogleFonts.fredoka(fontSize: 20, fontWeight: FontWeight.bold)),
-
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
-            decoration: BoxDecoration(color: statusColor.withAlpha(40), borderRadius: BorderRadius.circular(20)),
-            child: Text(
-              status,
-              style: GoogleFonts.fredoka(fontSize: 14, fontWeight: FontWeight.bold, color: statusColor),
-            ),
-          ),
-        ],
       ),
     );
   }
