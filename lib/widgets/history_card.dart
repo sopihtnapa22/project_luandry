@@ -30,7 +30,7 @@ class HistoryCard extends StatelessWidget {
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(color: const Color(0xFFF5F5F5), borderRadius: BorderRadius.circular(24)),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start, // ให้ข้อความเริ่มจากด้านบน
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             width: 100,
@@ -47,10 +47,10 @@ class HistoryCard extends StatelessWidget {
               children: [
                 Text(date, style: GoogleFonts.fredoka(fontSize: 18, fontWeight: FontWeight.w500)),
                 const SizedBox(height: 4),
-                Text("• $washType  Machine $machineNo", style: GoogleFonts.fredoka(fontSize: 18)),
-                Text("  $timeRange • $duration", style: GoogleFonts.fredoka(fontSize: 18)),
-                Text("  Total: $total", style: GoogleFonts.fredoka(fontSize: 18)),
-                Text("  Status: Completed", style: GoogleFonts.fredoka(fontSize: 18, color: Colors.black)),
+                Text("• $washType  Machine $machineNo", style: GoogleFonts.fredoka(fontSize: 18, fontWeight: FontWeight.w500)),
+                Text("  $timeRange • $duration", style: GoogleFonts.fredoka(fontSize: 18, fontWeight: FontWeight.w500)),
+                Text("  Total: $total", style: GoogleFonts.fredoka(fontSize: 18, fontWeight: FontWeight.w500)),
+                Text("  Status: Completed", style: GoogleFonts.fredoka(fontSize: 18, fontWeight: FontWeight.w500)),
               ],
             ),
           ),

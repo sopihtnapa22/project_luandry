@@ -60,8 +60,8 @@ class HistoryScreen extends StatelessWidget {
                     SizedBox(height: 25),
                     HistoryCard(
                       date: "11 Feb 2025",
-                      machineNo: "03",
-                      washType: "Wash (Warm Water)",
+                      machineNo: "05",
+                      washType: "Dry",
                       timeRange: "13:20 -> 13:50",
                       duration: "30 min",
                       total: "฿40",
