@@ -13,28 +13,23 @@ class InfoCard extends StatelessWidget {
     return Container(
       height: 180,
       width: 350,
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(color: Color(0xFF4FC3F7), borderRadius: BorderRadius.circular(50)),
-      child: Row(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset(imagePath, width: 70, height: 70),
-          const SizedBox(width: 20),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: GoogleFonts.fredoka(fontSize: 24, fontWeight: FontWeight.bold, color: Color(0xFF1A237E)),
-                ),
-                const SizedBox(height: 6),
-                Text(
-                  subtitle,
-                  style: GoogleFonts.fredoka(fontSize: 20, fontWeight: FontWeight.bold, color: Color(0xFF1A237E)),
-                ),
-              ],
-            ),
+          Text(
+            title,
+            style: GoogleFonts.fredoka(fontSize: 30, fontWeight: FontWeight.bold, color: Color(0xFF1A237E)),
           ),
+          const SizedBox(height: 2),
+          Text(
+            subtitle,
+            style: GoogleFonts.fredoka(fontSize: 28, fontWeight: FontWeight.bold, color: Color(0xFF1A237E)),
+          ),
+          const SizedBox(height: 5),
+          Image.asset(imagePath, width: 70, height: 70),
         ],
       ),
     );

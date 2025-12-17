@@ -71,7 +71,7 @@ class HomeScreen extends StatelessWidget {
                       children: const [
                         TextSpan(text: "Active Orders: 1 "),
                         TextSpan(
-                          text: "!!",
+                          text: "! !",
                           style: TextStyle(color: Colors.red),
                         ),
                       ],
@@ -80,11 +80,11 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 40),
-              InfoCard(imagePath: 'assets/wash.png', title: 'Laundry in progress', subtitle: 'Your clothes will be ready soon'),
+              InfoCard(title: 'Wash clothes', subtitle: 'ซักผ้า', imagePath: 'assets/wash.png'),
 
-              const SizedBox(height: 16),
+              const SizedBox(height: 30),
 
-              InfoCard(imagePath: 'assets/quick-dry.png', title: 'Drying service', subtitle: 'Estimated time 30 minutes'),
+              InfoCard(imagePath: 'assets/quick-dry.png', title: 'Dry clothes', subtitle: 'อบผ้า'),
             ],
           ),
         ),

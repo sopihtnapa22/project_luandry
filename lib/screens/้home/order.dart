@@ -7,14 +7,13 @@ class OrderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFE0F7FA),
+      backgroundColor: Colors.white,
 
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Column(
             children: [
-              /// ===== Back Button =====
               Align(
                 alignment: Alignment.centerLeft,
                 child: IconButton(
@@ -23,14 +22,6 @@ class OrderScreen extends StatelessWidget {
                     Navigator.pop(context);
                   },
                 ),
-              ),
-
-              const SizedBox(height: 12),
-
-              /// ===== Title =====
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text("My Orders", style: GoogleFonts.fredoka(fontSize: 32, fontWeight: FontWeight.bold)),
               ),
 
               const SizedBox(height: 24),
