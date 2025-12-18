@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:project_luandry/screens/%E0%B9%89home/history.dart';
 import 'package:project_luandry/screens/%E0%B9%89home/Order.dart';
+import 'package:project_luandry/screens/%E0%B9%89home/menu/menu_dry.dart';
 import 'package:project_luandry/screens/%E0%B9%89home/menu/menu_wash.dart';
 import 'package:project_luandry/screens/%E0%B9%89home/profile.dart';
 import 'package:project_luandry/widgets/card.dart';
+import 'package:project_luandry/widgets/machinedry_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -85,12 +87,18 @@ class HomeScreen extends StatelessWidget {
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => WashingMenuScreen()));
                 },
+
                 child: InfoCard(title: 'Wash clothes', subtitle: 'ซักผ้า', imagePath: 'assets/wash.png'),
               ),
 
               const SizedBox(height: 30),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => DryMenuScreen()));
+                },
 
-              InfoCard(imagePath: 'assets/quick-dry.png', title: 'Dry clothes', subtitle: 'อบผ้า'),
+                child: InfoCard(title: 'Dry clothes', subtitle: 'อบผ้า', imagePath: 'assets/quick-dry.png'),
+              ),
             ],
           ),
         ),
