@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:project_luandry/screens/%E0%B9%89home/history.dart';
 import 'package:project_luandry/screens/%E0%B9%89home/Order.dart';
+import 'package:project_luandry/screens/%E0%B9%89home/menu/menu_wash.dart';
 import 'package:project_luandry/screens/%E0%B9%89home/profile.dart';
 import 'package:project_luandry/widgets/card.dart';
 
@@ -80,7 +81,12 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 40),
-              InfoCard(title: 'Wash clothes', subtitle: 'ซักผ้า', imagePath: 'assets/wash.png'),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => WashingMenuScreen()));
+                },
+                child: InfoCard(title: 'Wash clothes', subtitle: 'ซักผ้า', imagePath: 'assets/wash.png'),
+              ),
 
               const SizedBox(height: 30),
 
