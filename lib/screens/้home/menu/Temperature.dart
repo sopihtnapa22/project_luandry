@@ -27,6 +27,52 @@ class TemperatureSelectionScreen extends StatelessWidget {
               ),
             ),
           ),
+          Positioned(
+            top: 120,
+            left: 0,
+            right: 0,
+            child: Center(
+              child: Container(
+                width: 380,
+                height: 220,
+                padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+                decoration: BoxDecoration(
+                  color: const Color(0xFF42BD41),
+                  borderRadius: BorderRadius.circular(40),
+                  boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.15), blurRadius: 10, offset: const Offset(0, 5))],
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                      width: 140,
+                      height: 140,
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(40),
+                        border: Border.all(color: const Color(0xFF0D47A1), width: 6),
+                      ),
+                      child: Image.asset('assets/laundry(1).png', fit: BoxFit.contain),
+                    ),
+                    const SizedBox(width: 30),
+
+                    Container(
+                      width: 170,
+                      height: 70,
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 13),
+                      decoration: BoxDecoration(color: Colors.black.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(40)),
+                      child: Text(
+                        machine.name,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
 
           Align(
             alignment: Alignment.bottomCenter,
@@ -49,9 +95,8 @@ class TemperatureSelectionScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 40),
 
-                    // ตัวเลือกน้ำเย็น
                     TemperatureOptionCard(
-                      imagePath: 'assets/wash.png',
+                      imagePath: 'assets/washing.png',
                       title: 'Water: cold',
                       time: 'time: 30m.',
                       price: '25.',
@@ -59,7 +104,7 @@ class TemperatureSelectionScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 25),
                     TemperatureOptionCard(
-                      imagePath: 'assets/wash.png',
+                      imagePath: 'assets/washing.png',
                       title: 'Water: hot',
                       time: 'time: 30m.',
                       price: '30.',
